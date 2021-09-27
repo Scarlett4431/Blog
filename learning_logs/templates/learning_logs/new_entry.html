@@ -9,7 +9,7 @@
 <form action= "{% url 'learning_logs:new_entry' topic.id%}" method='POST'>
     {% csrf_token %}
     {{ form.as_p }}
-    <button name= "submit">Add entry</button>
+    <button name= "submit" href="{% url 'learning_logs:new_entry' topic.id %}">add new entry</button> 
 </form>
 
 {% endblock content %}

@@ -16,43 +16,38 @@
   
   <body>
 
-    <!-- Static navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark bar fixed-top">
-          <span class="navbar-brand">
-            <img src="Images/Untitled.png" alt="" width="24" height="24" class="d-inline-block align-text-top">
-            RingoEater
-          </span>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="{% url 'learning_logs:index' %}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="album.html">Albums</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="artist.html">Artist</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-            </ul>
-          </div>
-          </nav>
-    
-    <div class="container">
 
-      <div class="page-header">
-        {% block header %}{% endblock %}
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <span class="navbar-brand">RingoEater</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'learning_logs:index' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'learning_logs:topics' %}">Topics</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <main role="main" class= "container">
+      <div class= "pb-2 mb-2 border-bottom">
+        {% block page_header%} {% endblock page_header%}
       </div>
       <div>
-        {% block content %}{% endblock %}
+        {% block content %}{% endblock content%}
       </div>
-
-    </div> <!-- /container -->
+    </main>
+    
 
   </body>
 </html>
